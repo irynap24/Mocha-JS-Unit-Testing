@@ -112,6 +112,10 @@ describe("Problems", function () {
             expect(isFive(1)).to.equal(false);
         })
     })
+    function isFive(num) {
+        return num === 5;
+    }
+
 
     describe("isOdd", function () {
         it('should return true if input is odd, false otherwise', function () {
@@ -119,6 +123,9 @@ describe("Problems", function () {
             expect(isOdd(0)).to.equal(false);
         })
     })
+    function isOdd(num) {
+        return num % 2 !== 0
+    }
 
     describe("isSubstring", function () {
         it('should return true is searchString contains subString', function () {
