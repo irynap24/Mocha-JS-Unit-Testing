@@ -10,6 +10,10 @@ describe("Problems", function () {
             expect(divideByThree(1)).to.equal(1 / 3);
             expect(divideByThree(0)).to.equal(0);
         })
+        function divideByThree(input) {
+            return input / 3;
+        }
+
     })
 
     describe("averageOfTwo", function () {
@@ -18,24 +22,39 @@ describe("Problems", function () {
             expect(averageOfTwo(2, 4)).to.equal(3);
         })
     })
+    function averageOfTwo(a, b) {
+        return (a + b) / 2;
+    }
 
     describe("averageOfFour", function () {
         it('should take average of four inputs', function () {
             expect(averageOfFour(1, 2, 3, 4)).to.equal(2.5);
         })
     })
+    function averageOfFour(a, b, c, d) {
+        return (a + b + c + d) / 4
+    }
 
     describe("doubler", function () {
         it('should double every element in an array', function () {
             expect(doubler([1, 2, 3])).to.deep.equal([2, 4, 6]);
         })
     })
+    function doubler(arr) {
+        return arr.map(function (num) {
+            return num * 2;
+        });
+    }
+
 
     describe("combineArrays", function () {
         it('should concatenate two input arrays', function () {
             expect(combineArrays([1, 2], [3, 4])).to.deep.equal([1, 2, 3, 4]);
         })
     })
+    function combineArrays(arr1, arr2) {
+        return arr1.concat(arr2)
+    }
 
     describe("wordWithinArray", function () {
         it('should return true if word is within array', function () {
@@ -55,41 +74,41 @@ describe("Problems", function () {
         })
     })
 
-    describe("hello", function() {
-        it('should return the string as "Hello, {input}"', function() {
+    describe("hello", function () {
+        it('should return the string as "Hello, {input}"', function () {
             expect(hello('John')).to.equal("Hello, John");
         })
     })
 
-    describe("goodbye", function() {
-        it('should return the string as "Bye, {input}"', function() {
+    describe("goodbye", function () {
+        it('should return the string as "Bye, {input}"', function () {
             expect(goodbye('Lee')).to.equal("Bye, Lee");
         })
     })
 
-    describe("isFive", function() {
-        it('should return true if input is 5, false otherwise', function() {
+    describe("isFive", function () {
+        it('should return true if input is 5, false otherwise', function () {
             expect(isFive(5)).to.equal(true);
             expect(isFive(1)).to.equal(false);
         })
     })
 
-    describe("isOdd", function() {
-        it('should return true if input is odd, false otherwise', function() {
+    describe("isOdd", function () {
+        it('should return true if input is odd, false otherwise', function () {
             expect(isOdd(21)).to.equal(true);
             expect(isOdd(0)).to.equal(false);
         })
     })
 
-    describe("isSubstring", function() {
-        it('should return true is searchString contains subString', function() {
+    describe("isSubstring", function () {
+        it('should return true is searchString contains subString', function () {
             expect(isSubString("I love App Academy", "app")).to.equal(true);
             expect(isSubString("I love App Academy", "hello")).to.equal(false);
         })
     })
 
-    describe("aCounter", function() {
-        it('should count the number of instances of the letter "a"', function() {
+    describe("aCounter", function () {
+        it('should count the number of instances of the letter "a"', function () {
             expect(aCounter("There are a few cats in attic today")).to.equal(5);
             expect(aCounter("A day without sun is sad")).to.equal(3);
         })
