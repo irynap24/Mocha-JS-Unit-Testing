@@ -61,30 +61,50 @@ describe("Problems", function () {
             expect(wordWithinArray("hello", ["yes", "no", "hello", "goodbye"])).to.equal(true);
         })
     })
+    function wordWithinArray(word, arr) {
+        return arr.includes(word)
+    }
 
     describe("echo", function () {
         it('should return string in format [UPPERCASE] ... [Original] ... [LOWERCASE] ', function () {
             expect(echo('Hello')).to.equal("HELLO ... Hello ... hello");
         })
     })
+    function echo(str) {
+        return `${str.toUpperCase()} ... ${str} ... ${str.toLowerCase()}`
+    }
 
     describe("fizzBuzz", function () {
         it('should return array of numbers from 0 to max (not inclusive) that are divisible by 3 or 5 but not both', function () {
             expect(fizzBuzz(20)).to.deep.equal([3, 5, 6, 9, 10, 12, 18]);
         })
     })
+    function fizzBuzz(max) {
+        const result = [] //initialize empty array to store results 
+        for (let i = 0; i < max; i++) // loop through nums 0 to max
+            if ((i % 3 === 0 || i % 5 === 0) && !(i % 3 === 0 && i % 5 === 0)) { // checks if num is divisible by 3 or 5 and not both
+                result.push(i)
+            }
+        return result;
+    }
 
     describe("hello", function () {
         it('should return the string as "Hello, {input}"', function () {
             expect(hello('John')).to.equal("Hello, John");
         })
     })
+    function hello(str) {
+        return `Hello, ${str}`
+    }
 
     describe("goodbye", function () {
         it('should return the string as "Bye, {input}"', function () {
             expect(goodbye('Lee')).to.equal("Bye, Lee");
         })
     })
+    function goodbye(str) {
+        return `Bye, ${str}`
+    }
 
     describe("isFive", function () {
         it('should return true if input is 5, false otherwise', function () {
