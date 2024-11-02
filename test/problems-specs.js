@@ -133,6 +133,9 @@ describe("Problems", function () {
             expect(isSubString("I love App Academy", "hello")).to.equal(false);
         })
     })
+    function isSubString(searchString, subString) {
+        return searchString.toLowerCase().includes(subString.toLowerCase())
+    }
 
     describe("aCounter", function () {
         it('should count the number of instances of the letter "a"', function () {
@@ -140,5 +143,16 @@ describe("Problems", function () {
             expect(aCounter("A day without sun is sad")).to.equal(3);
         })
     })
+    function aCounter(str) {
+        let counter = 0
+        for (let i = 0; i < str.length; i++) {
+            if (str[i].toLowerCase() === 'a') {
+                counter++
+            }
+        }
+        return counter;
+    }
+
+
 
 });
